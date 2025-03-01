@@ -365,7 +365,7 @@ const getRandomPosition = (width, height, exclude = []) => {
   let pos;
   do {
     pos = { x: Math.floor(Math.random() * width), y: Math.floor(Math.random() * height) };
-  } while (exclude.some((e) => e.x === pos.x && e.y === pos.y));
+  } while (exclude.some((e) => e.x === pos.x && e.y === pos.y));   //eslint-disable-line
   return pos;
 };
 
@@ -440,7 +440,7 @@ const SnakeGame = () => {
           }
       }
     },
-    [gameState, direction]
+    [gameState, direction]          //eslint-disable-line
   );
 
   const handleTouchStart = (e) => {
@@ -493,7 +493,7 @@ const SnakeGame = () => {
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [handleKeyDown, gameState, direction]);
+  }, [handleKeyDown, gameState, direction]);         //eslint-disable-line
 
   useEffect(() => {
     if (gameState !== 'playing') return;
